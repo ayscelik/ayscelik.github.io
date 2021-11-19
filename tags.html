@@ -53,32 +53,6 @@ layout: page
         <img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" width="369" height="282">
         <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
 	    
-	<script>
-	// Hide all the images.
-	document.getElementById("basic").style.display='block';	
-   	document.getElementById("wd:Q40260").style.display='none';
-   	document.getElementById("wd:Q39572").style.display='none';
-   	document.getElementById("wd:Q79899").style.display='none';
-   	document.getElementById("wd:Q220599").style.display='none';
-    	document.getElementById("wd:Q14349455").style.display='none';
-    	document.getElementById("wd:Q79927").style.display='none';
-    	document.getElementById("wd:Q83181").style.display='none';
-
-	// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
-   	 $("#locations").change(function(){
-        	document.getElementById("basic").style.display='none';
-		document.getElementById("wd:Q40260").style.display='none';
-        	document.getElementById("wd:Q39572").style.display='none';
-        	document.getElementById("wd:Q79899").style.display='none';
-        	document.getElementById("wd:Q220599").style.display='none';
-        	document.getElementById("wd:Q14349455").style.display='none';
-        	document.getElementById("wd:Q79927").style.display='none';
-        	document.getElementById("wd:Q83181").style.display='none';
-
-        var imgId = $("#locations").val();
-        document.getElementById(imgId).style.display='block';
-    });
-</script>
     <p>
     </td>
     </tr>
@@ -91,18 +65,6 @@ layout: page
 			<option value="wd:Q14907008">Upregulated</option>
 			<option value="wd:Q14906419">Downregulated</option>
 		    </select>
-	    	<script>
-		    	$("#type").change(function(){
-		var typeval = $("#type").val();
-		if (typeval == "blank") {
-			document.getElementById("type").style.backgroundColor='#DCDCDC';
-		} else if (typeval == "wd:Q14907008") {
-			document.getElementById("type").style.backgroundColor='#00E600';
-		} else if (typeval =="wd:Q14906419"){
-			document.getElementById("type").style.backgroundColor='red';
-		}
-    });
-		    </script>
 	    </td>
     </tr>
     </tbody>
@@ -158,8 +120,41 @@ layout: page
 		});
 	}
     });
-<!-- Script for -->	
-		
+	// Hide all the images.
+	document.getElementById("basic").style.display='block';	
+   	document.getElementById("wd:Q40260").style.display='none';
+   	document.getElementById("wd:Q39572").style.display='none';
+   	document.getElementById("wd:Q79899").style.display='none';
+   	document.getElementById("wd:Q220599").style.display='none';
+    	document.getElementById("wd:Q14349455").style.display='none';
+    	document.getElementById("wd:Q79927").style.display='none';
+    	document.getElementById("wd:Q83181").style.display='none';
+
+	// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
+   	 $("#locations").change(function(){
+        	document.getElementById("basic").style.display='none';
+		document.getElementById("wd:Q40260").style.display='none';
+        	document.getElementById("wd:Q39572").style.display='none';
+        	document.getElementById("wd:Q79899").style.display='none';
+        	document.getElementById("wd:Q220599").style.display='none';
+        	document.getElementById("wd:Q14349455").style.display='none';
+        	document.getElementById("wd:Q79927").style.display='none';
+        	document.getElementById("wd:Q83181").style.display='none';
+
+        var imgId = $("#locations").val();
+        document.getElementById(imgId).style.display='block';
+    });	
+	
+	$("#type").change(function(){
+		var typeval = $("#type").val();
+		if (typeval == "blank") {
+			document.getElementById("type").style.backgroundColor='#DCDCDC';
+		} else if (typeval == "wd:Q14907008") {
+			document.getElementById("type").style.backgroundColor='#00E600';
+		} else if (typeval =="wd:Q14906419"){
+			document.getElementById("type").style.backgroundColor='red';
+		}
+    });
 </script>
 </body>
 </html>
