@@ -85,11 +85,11 @@ layout: page
     <tr>
     <td>Type of regulation in cellular senescence:</td>
     <td>
-        <select class="label grey"name="type" id="type">
-        <option value="null">select</option>
-	<option value="wd:Q14907008">Positive</option>
-        <option value="wd:Q14906419">Negative</option>
-    </select>
+	    <select class="label grey"name="type" id="type">
+		<option value="null">select</option>
+		<option value="wd:Q14907008">Positive</option>
+		<option value="wd:Q14906419">Negative</option>
+	    </select>
     </td>
     </tr>
     </tbody>
@@ -108,30 +108,36 @@ layout: page
     $("#submit").click(async function() {
         $("#list_of_proteins").empty();
         const location = $('#locations').val();
-        const type = $('#type').val();
-        const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
-	 WHERE {
-	?proteinLink wdt:P31 wd:Q8054.
-	?proteinLink wdt:P703 wd:Q15978631.
-	 VALUES ?goBioprocess {${type}}.
-  	?proteinLink wdt:P682 ?goBioprocess.
-  	VALUES ?goLocation {${location}}.
-  	?proteinLink wdt:P681 ?goLocation.
-	SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-	}`;
-        const url = wdk.sparqlQuery(wdquery)
-        const response = await fetch(url)
-        const results = await response.json()
-        const proteinList = wdk.simplify.sparqlResults(results)
-	
-	// Statement to return an answer if you choose a location with no proteins.
-        if (proteinList.length == 0)
-             $("#list_of_proteins").text("There are no proteins of this type in this location.");
 	    
-	// Print a numbered list of proteins in requested location.    
-        proteinList.forEach(function(protein) {
-            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
-        });
+	if (location == "null")
+	{
+		 $("#list_of_proteins").text("You did not select a type of regulation.");
+	} else {
+        	const type = $('#type').val();
+        	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
+		WHERE {
+		?proteinLink wdt:P31 wd:Q8054.
+		?proteinLink wdt:P703 wd:Q15978631.
+		 VALUES ?goBioprocess {${type}}.
+		?proteinLink wdt:P682 ?goBioprocess.
+		VALUES ?goLocation {${location}}.
+		?proteinLink wdt:P681 ?goLocation.
+		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+		}`;
+		const url = wdk.sparqlQuery(wdquery)
+		const response = await fetch(url)
+		const results = await response.json()
+		const proteinList = wdk.simplify.sparqlResults(results)
+	
+		// Statement to return an answer if you choose a location with no proteins.
+		if (proteinList.length == 0)
+		     $("#list_of_proteins").text("There are no proteins of this type in this location.");
+
+		// Print a numbered list of proteins in requested location.    
+		proteinList.forEach(function(protein) {
+		    $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
+		});
+	}
     });
 </script>
 </body>
