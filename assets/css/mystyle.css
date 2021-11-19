@@ -5,7 +5,7 @@ body {
 table.comicGreen {
   font-family: Verdana, Helvetica, sans-serif;
   border: 2px solid #4F7849;
-  background-color: #EEEEEE;
+  background-color: #CEE0CC;
   width: 660px;
   text-align: left;
   border-collapse: collapse;
@@ -20,7 +20,7 @@ table.comicGreen tbody td {
   color: #4F7849;
 }
 table.comicGreen tr:nth-child(even) {
-  background: #CEE0CC;
+  background: #EEEEEE;
 }
 
 .label {
