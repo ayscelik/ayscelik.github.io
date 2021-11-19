@@ -15,7 +15,7 @@ table.comicGreen {
 table.comicGreen td, table.comicGreen th {
   border: 3px solid #000000;
   padding: 13px 12px;
-  width: 300px;
+  width: 400px;
   overflow: hidden;
 }
 table.comicGreen tbody td {
