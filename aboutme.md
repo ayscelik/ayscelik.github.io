@@ -1,16 +1,17 @@
 ---
 layout: page
 title: Information about Cellular Senescence
-subtitle: Why you'd want to go on a date with me
+subtitle: Who are we?
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Aysegul Çelik
+Imran Sadovic
+Sebastian Schnichels
+Nika Simicic
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
 
-### My story
+### Our story
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+We are a group of students from Maastricht Science Programme at Maastricht University in the Netherlands.
+We are the Group 6 from Programming in the Life Sciences. Our aim with this website is to show our programming skills in querying biological data as well as making a pretty visualization in the end.
