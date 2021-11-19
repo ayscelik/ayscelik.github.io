@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Information about Cellular Senescence
+title: About Us :)
 subtitle: Who are we?
 ---
 
