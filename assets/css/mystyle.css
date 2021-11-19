@@ -51,8 +51,8 @@ Toggle Radios v1.3
 Toggle Radios v1.4
 by Adam Culpepper | @adamculpepper
 https://github.com/adamculpepper/toggle-radios
-*/
 @@ -16,8 +16,8 @@ https://github.com/adamculpepper/toggle-radios
+*/
 .toggle-radio input:last-of-type + label {border-radius:0 0 4px 4px;}
 
 /* Indicators for smaller devices (stacked) */
