@@ -78,15 +78,6 @@ layout: page
         var imgId = $("#locations").val();
         document.getElementById(imgId).style.display='block';
     });
-		
-	$("#type").change(function(){
-		var typeval = $("#type").val();
-		if (typeval == "wd:Q14907008") {
-			document.getElementById("type").style.backgroundColor='green';
-		} else if (typeval =="wd:Q14906419"){
-			document.getElementById("type").style.backgroundColor='red';
-		}
-    });
 </script>
     <p>
     </td>
@@ -100,6 +91,16 @@ layout: page
 			<option value="wd:Q14907008">Positive</option>
 			<option value="wd:Q14906419">Negative</option>
 		    </select>
+	    	<script>
+		    	$("#type").change(function(){
+		var typeval = $("#type").val();
+		if (typeval == "wd:Q14907008") {
+			document.getElementById("type").style.backgroundColor='green';
+		} else if (typeval =="wd:Q14906419"){
+			document.getElementById("type").style.backgroundColor='red';
+		}
+    });
+		    </script>
 	    </td>
     </tr>
     </tbody>
