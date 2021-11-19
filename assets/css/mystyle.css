@@ -21,6 +21,7 @@ table.comicGreen td, table.comicGreen th {
 table.comicGreen tbody td {
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
   color: black;
 }
 table.comicGreen tr:nth-child(even) {
