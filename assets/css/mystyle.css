@@ -11,7 +11,7 @@ table.comicGreen {
   border-collapse: collapse;
 }
 table.comicGreen td, table.comicGreen th {
-  border: 3px solid #4F7849;
+  border: 3px solid #000000;
   padding: 3px 2px;
 }
 table.comicGreen tbody td {
