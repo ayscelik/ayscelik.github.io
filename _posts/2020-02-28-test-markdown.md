@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cellular Senescence
-comments: true
+
 ---
 
 Follow this link to search for proteins: https://ayscelik.github.io/tags/
