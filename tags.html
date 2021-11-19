@@ -86,14 +86,13 @@ layout: page
 	const type = $('#type').val();
 	    
 	if (type == "blank" && location == "basic")
-		let text = "You're stupid";
-		let result = text.bold();
-		document.getElementById("demo").innerHTML = result;
+		$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
+	    
 	else if (location == "basic")
-		$("#list_of_proteins").text("You did not select a location.");
+		$("#list_of_proteins").text("Error: You did not select a location.");
 	
 	else if (type == "blank")
-		$("#list_of_proteins").text("You did not select a type of regulation.");
+		$("#list_of_proteins").text("Error: You did not select a type of regulation.");
 	    
 	else {
         	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
