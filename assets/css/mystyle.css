@@ -20,7 +20,7 @@ table.comicGreen tbody td {
   color: black;
 }
 table.comicGreen tr:nth-child(even) {
-  background: white;
+  background: #CEE0CC;
 }
 
 .label {
