@@ -2,6 +2,10 @@ body {
   background-color: #ECF9ED;
 }
 
+h1 {
+  text-align: center;
+}
+
 table.comicGreen {
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
