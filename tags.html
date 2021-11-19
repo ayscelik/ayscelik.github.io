@@ -87,7 +87,7 @@ layout: page
     <td>Type of regulation in cellular senescence:</td>
 	    <td>
 		    <select class="label grey"name="type" id="type">
-			<option value="null">select</option>
+			<option value="blank">select</option>
 			<option value="wd:Q14907008">Positive</option>
 			<option value="wd:Q14906419">Negative</option>
 		    </select>
@@ -119,8 +119,9 @@ layout: page
     $("#submit").click(async function() {
         $("#list_of_proteins").empty();
         const location = $('#locations').val();
-	    
-	if (location == "null")
+	
+	console.log(location);
+	if (location == "blank")
 	{
 		 $("#list_of_proteins").text("You did not select a type of regulation.");
 	} else {
