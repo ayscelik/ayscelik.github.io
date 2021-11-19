@@ -27,6 +27,6 @@ table.comicGreen tr:nth-child(even) {
   color: white;
   padding: 8px;
 }
-.success {font-family: Verdana, Helvetica, sans-serif; font-size: 16px; background-color: #D3D3D3; width: 200px;} /* Grey */
+.success {font-family: Verdana, Helvetica, sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;} /* Grey */
 .info {font-family: Verdana, Helvetica, sans-serif; font-size: 16px; background-color: #4F7849; width: 200px; color: black; font-weight: bold;}
 .header {font-family: Verdana, Helvetica, sans-serif; color: black;}
