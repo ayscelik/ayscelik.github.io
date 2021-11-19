@@ -131,6 +131,9 @@ layout: page
 	else if (location == "basic")
 		$("#list_of_proteins").text("You did not select a location.");
 	    
+	else if (type == "blank" && location == "basic")
+		$("#list_of_proteins").text("You did not select a location or a type of regulation. Please follow the instructions.");
+	    
 	else {
         	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
 		WHERE {
