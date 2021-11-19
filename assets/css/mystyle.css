@@ -7,6 +7,11 @@ title {
   font-size: 25px;
 }
 
+title.test {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 25px;
+}
+
 h1.test {
   text-align: center;
 }
