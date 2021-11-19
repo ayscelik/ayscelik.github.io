@@ -17,7 +17,7 @@ table.comicGreen td, table.comicGreen th {
 table.comicGreen tbody td {
   font-size: 18px;
   font-weight: bold;
-  color: #4F7849;
+  color: #EEEEEE;
 }
 table.comicGreen tr:nth-child(even) {
   background: #EEEEEE;
