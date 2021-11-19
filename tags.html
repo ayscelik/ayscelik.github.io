@@ -126,9 +126,12 @@ layout: page
 	console.log(location);
 	
 	if (type == "blank")
-	{
-		 $("#list_of_proteins").text("You did not select a type of regulation.");
-	} else {
+		$("#list_of_proteins").text("You did not select a type of regulation.");
+	
+	if else (location == "basic")
+		$("#list_of_proteins").text("You did not select a location.");
+	    
+	else {
         	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
 		WHERE {
 		?proteinLink wdt:P31 wd:Q8054.
