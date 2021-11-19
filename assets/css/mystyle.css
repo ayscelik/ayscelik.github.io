@@ -53,9 +53,9 @@ table.comicGreen tr:nth-child(even) {
 
 
 select option[value="wd:Q14907008"] {
-  background: rgba(100, 100, 100, 0.3);
+  background: red;
 }
 
 select option[value="wd:Q14906419"] {
-  background: rgba(150, 150, 150, 0.3);
+  background: green;
 }
