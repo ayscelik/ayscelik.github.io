@@ -56,7 +56,7 @@ select option[value="blank"] {
 }
 
 select option[value="wd:Q14907008"] {
-  background: green;
+  background: #00E600;
 }
 
 select option[value="wd:Q14906419"] {
