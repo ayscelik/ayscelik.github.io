@@ -15,6 +15,7 @@ author: MSP
 
 navbar-links:
  Protein Search Tool: "tags"
+ About Us: "aboutme"
 #  Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
 #    - Learn markdown: "https://www.markdowntutorial.com/"
