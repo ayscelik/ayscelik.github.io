@@ -49,6 +49,7 @@ table.comicGreen tr:nth-child(even) {
 .success {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;} /* Grey */
 .info {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #4F7849; width: 200px; color: black; font-weight: bold;}
 .header {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; text-align: center; color: black;}
+.grey {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;} /* Grey */
 
 
 select option[value="wd:Q14907008"] {
