@@ -24,7 +24,7 @@ table.comicGreen tr:nth-child(even) {
 }
 
 .label {
-  color: white;
+  color: black;
   padding: 8px;
 }
 .success {font-family: Verdana, Helvetica, sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;} /* Grey */
