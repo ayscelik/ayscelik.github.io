@@ -17,10 +17,10 @@ table.comicGreen td, table.comicGreen th {
 table.comicGreen tbody td {
   font-size: 18px;
   font-weight: bold;
-  color: #EEEEEE;
+  color: black;
 }
 table.comicGreen tr:nth-child(even) {
-  background: #EEEEEE;
+  background: white;
 }
 
 .label {
