@@ -52,34 +52,34 @@ title: 'Proteins Involved in Cellular Senescence'
         <img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell">
         <img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" >
         <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell">
-    <p>
-    </td>
-    <script>
-// Hide all the images.
-    document.getElementById("wd:Q40260").style.display='none';
-    document.getElementById("wd:Q39572").style.display='none';
-    document.getElementById("wd:Q79899").style.display='none';
-    document.getElementById("wd:Q220599").style.display='none';
-    document.getElementById("wd:Q14349455").style.display='none';
-    document.getElementById("wd:Q79927").style.display='none';
-    document.getElementById("wd:Q83181").style.display='none';
+	    
+	<script>
+	// Hide all the images.
+   	document.getElementById("wd:Q40260").style.display='none';
+   	document.getElementById("wd:Q39572").style.display='none';
+   	document.getElementById("wd:Q79899").style.display='none';
+   	document.getElementById("wd:Q220599").style.display='none';
+    	document.getElementById("wd:Q14349455").style.display='none';
+    	document.getElementById("wd:Q79927").style.display='none';
+    	document.getElementById("wd:Q83181").style.display='none';
 
-// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
-    $("#locations").change(function(){
-
-        document.getElementById("null").style.display='none';
-	document.getElementById("wd:Q40260").style.display='none';
-        document.getElementById("wd:Q39572").style.display='none';
-        document.getElementById("wd:Q79899").style.display='none';
-        document.getElementById("wd:Q220599").style.display='none';
-        document.getElementById("wd:Q14349455").style.display='none';
-        document.getElementById("wd:Q79927").style.display='none';
-        document.getElementById("wd:Q83181").style.display='none';
+	// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
+   	 $("#locations").change(function(){
+        	document.getElementById("null").style.display='none';
+		document.getElementById("wd:Q40260").style.display='none';
+        	document.getElementById("wd:Q39572").style.display='none';
+        	document.getElementById("wd:Q79899").style.display='none';
+        	document.getElementById("wd:Q220599").style.display='none';
+        	document.getElementById("wd:Q14349455").style.display='none';
+        	document.getElementById("wd:Q79927").style.display='none';
+        	document.getElementById("wd:Q83181").style.display='none';
 
         var imgId = $("#locations").val();
         document.getElementById(imgId).style.display='block';
     });
 </script>
+    <p>
+    </td>
     </tr>
 	    
 <!-- Third row of the table -->	    
