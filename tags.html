@@ -45,7 +45,7 @@ title: 'Proteins Involved in Cellular Senescence'
     <td>Image:</td>
     <td>
     <p>
-        <img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell">
+        <img id="null" src="/assets/Pictures/BasicCell.jpg" alt="BasicCell">
         <img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell">
         <img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell">
         <img id="wd:Q220599" src="/assets/Pictures/CytosolLabel.jpg" alt="CytosolInCell">
@@ -67,7 +67,8 @@ title: 'Proteins Involved in Cellular Senescence'
 // Hide all images again, then reveal ONLY the location chosen from the drop-down menu
     $("#locations").change(function(){
 
-        document.getElementById("wd:Q40260").style.display='none';
+        document.getElementById("null").style.display='none';
+	document.getElementById("wd:Q40260").style.display='none';
         document.getElementById("wd:Q39572").style.display='none';
         document.getElementById("wd:Q79899").style.display='none';
         document.getElementById("wd:Q220599").style.display='none';
