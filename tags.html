@@ -132,6 +132,12 @@ title: 'Proteins Involved in Cellular Senescence'
         const response = await fetch(url)
         const results = await response.json()
         const proteinList = wdk.simplify.sparqlResults(results)
+	
+	// Statement to return an answer if you choose a location with no proteins.
+        if (proteinList.length == 0)
+             $("#list_of_proteins").text("There are no proteins of this type in this location.");
+	    
+	// Print a numbered list of proteins in requested location.    
         proteinList.forEach(function(protein) {
             $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
         });
