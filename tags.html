@@ -94,7 +94,9 @@ layout: page
 	    	<script>
 		    	$("#type").change(function(){
 		var typeval = $("#type").val();
-		if (typeval == "wd:Q14907008") {
+		if (typeval == "null") {
+			document.getElementById("type").style.backgroundColor='grey';
+		} else if (typeval == "wd:Q14907008") {
 			document.getElementById("type").style.backgroundColor='green';
 		} else if (typeval =="wd:Q14906419"){
 			document.getElementById("type").style.backgroundColor='red';
@@ -151,6 +153,8 @@ layout: page
 		});
 	}
     });
+<!-- Script for -->	
+		
 </script>
 </body>
 </html>
