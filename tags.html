@@ -121,13 +121,14 @@ layout: page
     $("#submit").click(async function() {
         $("#list_of_proteins").empty();
         const location = $('#locations').val();
-	
+	const type = $('#type').val();
+	    
 	console.log(location);
-	if (location == "blank")
+	
+	if (type == "blank")
 	{
 		 $("#list_of_proteins").text("You did not select a type of regulation.");
 	} else {
-        	const type = $('#type').val();
         	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
 		WHERE {
 		?proteinLink wdt:P31 wd:Q8054.
