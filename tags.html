@@ -80,48 +80,51 @@ layout: page
     <ol id="list_of_proteins">
     </ol>
 </div>
+	
 <script>
-    $("#submit").click(async function() {
-        $("#list_of_proteins").empty();
-        const location = $('#locations').val();
-	const type = $('#type').val();
-	    
-	if (type == "blank" && location == "basic")
-		$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
-	    
-	else if (location == "basic")
-		$("#list_of_proteins").text("Error: You did not select a location.");
-	
-	else if (type == "blank")
-		$("#list_of_proteins").text("Error: You did not select a type of regulation.");
-	    
-	else {
-        	const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
-		WHERE {
-		?proteinLink wdt:P31 wd:Q8054.
-		?proteinLink wdt:P703 wd:Q15978631.
-		 VALUES ?goBioprocess {${type}}.
-		?proteinLink wdt:P682 ?goBioprocess.
-		VALUES ?goLocation {${location}}.
-		?proteinLink wdt:P681 ?goLocation.
-		SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-		}`;
-		const url = wdk.sparqlQuery(wdquery)
-		const response = await fetch(url)
-		const results = await response.json()
-		const proteinList = wdk.simplify.sparqlResults(results)
-	
-		// Statement to return an answer if you choose a location with no proteins.
-		if (proteinList.length == 0)
-		     $("#list_of_proteins").text("There are no proteins of this type in this location.");
+	$("#submit").click(async function() {
+		$("#list_of_proteins").empty();
+		const location = $('#locations').val();
+		const type = $('#type').val();
 
-		// Print a numbered list of proteins in requested location.    
-		proteinList.forEach(function(protein) {
-		    $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
-		});
-	}
-    });
-	// Hide all the images.
+		if (type == "blank" && location == "basic")
+			$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
+
+		else if (location == "basic")
+			$("#list_of_proteins").text("Error: You did not select a location.");
+
+		else if (type == "blank")
+			$("#list_of_proteins").text("Error: You did not select a type of regulation.");
+
+		// Wikidata query to retrieve protein information    
+		else {
+			const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
+			WHERE {
+				?proteinLink wdt:P31 wd:Q8054.
+				?proteinLink wdt:P703 wd:Q15978631.
+				 VALUES ?goBioprocess {${type}}.
+				?proteinLink wdt:P682 ?goBioprocess.
+				VALUES ?goLocation {${location}}.
+				?proteinLink wdt:P681 ?goLocation.
+				SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+			}`;
+			const url = wdk.sparqlQuery(wdquery)
+			const response = await fetch(url)
+			const results = await response.json()
+			const proteinList = wdk.simplify.sparqlResults(results)
+
+			// Statement to return an answer if you choose a location with no proteins.
+			if (proteinList.length == 0)
+			     $("#list_of_proteins").text("There are no proteins of this type in this location.");
+
+			// Print a numbered list of proteins in requested location.    
+			proteinList.forEach(function(protein) {
+			    $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
+			});
+		}
+	});
+
+	// Hide all the images
 	document.getElementById("basic").style.display='block';	
    	document.getElementById("wd:Q40260").style.display='none';
    	document.getElementById("wd:Q39572").style.display='none';
@@ -132,7 +135,7 @@ layout: page
     	document.getElementById("wd:Q83181").style.display='none';
 
 	// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
-   	 $("#locations").change(function(){
+	$("#locations").change(function(){
         	document.getElementById("basic").style.display='none';
 		document.getElementById("wd:Q40260").style.display='none';
         	document.getElementById("wd:Q39572").style.display='none';
@@ -142,20 +145,21 @@ layout: page
         	document.getElementById("wd:Q79927").style.display='none';
         	document.getElementById("wd:Q83181").style.display='none';
 
-        var imgId = $("#locations").val();
-        document.getElementById(imgId).style.display='block';
-    });	
+		var imgId = $("#locations").val();
+		document.getElementById(imgId).style.display='block';
+	});	
 	
+	// Color the button for downregulated option in red, and the option for upregulated in green
 	$("#type").change(function(){
 		var typeval = $("#type").val();
 		if (typeval == "blank") {
 			document.getElementById("type").style.backgroundColor='#DCDCDC';
 		} else if (typeval == "wd:Q14907008") {
 			document.getElementById("type").style.backgroundColor='#00E600';
-		} else if (typeval =="wd:Q14906419"){
+		} else if (typeval =="wd:Q14906419") {
 			document.getElementById("type").style.backgroundColor='red';
 		}
-    });
+	});
 </script>
 </body>
 </html>
