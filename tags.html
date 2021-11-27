@@ -16,63 +16,64 @@ layout: page
 	
 <body>
 <div>	
-<p><p>
-<h2>Search for the proteins!</h2>
-<p>
-<!-- Create table -->
- <table class="comicGreen">
-    <tbody>
+	<p><p>
+	<h2>Search for the proteins!</h2>
+	<p>
+	<!-- Create table -->
+	 <table class="comicGreen">
+	    <tbody>
 
-<!-- First row of the table -->
-    <tr>
-    <td>Choose a location in the cell:</td>
-    <td>    
-    <select class="label success" name="locations" id="locations">
-	<option value="basic">- select -</option>
-        <option value="wd:Q40260">Nucleus</option>
-        <option value="wd:Q39572">Mitochondria</option>
-        <option value="wd:Q79899">Cytoplasm</option>
-        <option value="wd:Q220599">Cytosol</option>
-        <option value="wd:Q14349455">Membrane</option>
-	<option value="wd:Q79927">Endoplasmic reticulum</option>
-	<option value="wd:Q83181">Golgi apparatus</option>
-    </select>
-
-    </td>
-    </tr>	    
-<!-- Second row of the table -->
-    <tr>
-    <td>Here is where your proteins can be found:</td>
-    <td>
-        <img id="basic" src="/assets/Pictures/BasicCell.jpg" alt="BasicCell" width="369" height="282">  
-        <img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell" width="369" height="282">
-	<img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell" width="369" height="282">
-        <img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell" width="369" height="282">
-        <img id="wd:Q220599" src="/assets/Pictures/CytosolLabel.jpg" alt="CytosolInCell" width="369" height="282">
-        <img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell" width="369" height="282">
-        <img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" width="369" height="282">
-        <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
-	    
-    <p>
-    </td>
-    </tr>
-<!-- Third row of the table -->	    
-    <tr>
-    <td>Choose a type of regulation:</td>
-	    <td>
-		    <select class="label grey"name="type" id="type">
+	<!-- First row of the table -->
+	<tr>
+	<td>Choose a location in the cell:</td>
+	<td>    
+		<select class="label success" name="locations" id="locations">
+			<option value="basic">- select -</option>
+			<option value="wd:Q40260">Nucleus</option>
+			<option value="wd:Q39572">Mitochondria</option>
+			<option value="wd:Q79899">Cytoplasm</option>
+			<option value="wd:Q220599">Cytosol</option>
+			<option value="wd:Q14349455">Membrane</option>
+			<option value="wd:Q79927">Endoplasmic reticulum</option>
+			<option value="wd:Q83181">Golgi apparatus</option>
+		</select>
+	</td>	
+	</tr>
+		    
+	<!-- Second row of the table -->
+	<tr>
+	<td>Here is where your proteins can be found:</td>
+	<td>
+		<img id="basic" src="/assets/Pictures/BasicCell.jpg" alt="BasicCell" width="369" height="282">  
+		<img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell" width="369" height="282">
+		<img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell" width="369" height="282">
+		<img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell" width="369" height="282">
+		<img id="wd:Q220599" src="/assets/Pictures/CytosolLabel.jpg" alt="CytosolInCell" width="369" height="282">
+		<img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell" width="369" height="282">
+		<img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" width="369" height="282">
+		<img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
+		<p>
+	</td>
+	</tr>
+		    
+	<!-- Third row of the table -->	    
+	<tr>
+	<td>Choose a type of regulation:</td>
+	<td>
+		<select class="label grey"name="type" id="type">
 			<option value="blank">- select -</option>
 			<option value="wd:Q14907008">Upregulated</option>
 			<option value="wd:Q14906419">Downregulated</option>
-		    </select>
-	    </td>
-    </tr>
-    </tbody>
-    </table>
+		</select>
+	</td>
+	</tr>
+</tbody>
+</table>
 
-    <p>
-    <input id="submit" type="button" class="label success" value="List Proteins">
-    </p>
+<p>
+<input id="submit" type="button" class="label success" value="List Proteins">
+</p>
+	
 </div>
 
 <div>
