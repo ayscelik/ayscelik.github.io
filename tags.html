@@ -5,17 +5,19 @@ layout: page
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1 class="title test">Proteins involved in cellular senescence</h1>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Initialize a global WBK function -->
-    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
-    <!-- Initialize a global wdk object using the WBK object -->
-    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/mystyle.css">
+	<!-- Set-up for the title -->
+	<h1 class="title test">Proteins involved in cellular senescence</h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- Initialize a global WBK function -->
+	<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
+	<!-- Initialize a global wdk object using the WBK object -->
+	<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+	<link rel="stylesheet" href="/assets/css/mystyle.css">
 </head>
 	
 <body>
 <div>	
+	<!-- Set-up for the subtitle -->
 	<p><p>
 	<h2>Search for the proteins!</h2>
 	<p>
@@ -40,7 +42,7 @@ layout: page
 	</td>	
 	</tr>
 		    
-	<!-- Second row of the table -->
+	<!-- Second row of the table, imports all the necessary images -->
 	<tr>
 	<td>Here is where your proteins can be found:</td>
 	<td>
@@ -82,6 +84,7 @@ layout: page
 </div>
 	
 <script>
+	// Error codes in case the user has not entered a correct response, followed by the SPARQL query
 	$("#submit").click(async function() {
 		$("#list_of_proteins").empty();
 		const location = $('#locations').val();
@@ -117,14 +120,14 @@ layout: page
 			if (proteinList.length == 0)
 			     $("#list_of_proteins").text("There are no proteins of this type in this location.");
 
-			// Print a numbered list of proteins in requested location.    
+			// Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
 			proteinList.forEach(function(protein) {
 			    $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
 			});
 		}
 	});
 
-	// Hide all the images
+	// Hide all the imported images
 	document.getElementById("basic").style.display='block';	
    	document.getElementById("wd:Q40260").style.display='none';
    	document.getElementById("wd:Q39572").style.display='none';
