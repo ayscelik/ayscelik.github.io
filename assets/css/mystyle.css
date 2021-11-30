@@ -1,8 +1,16 @@
 body {
+  width: 50%; /* Position all elements in center  */
+  margin: 0 auto;
   background-color: #ECF9ED;
 }
 
 h1.header {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+}
+
+h2.header {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   text-align: center;
 }
 
