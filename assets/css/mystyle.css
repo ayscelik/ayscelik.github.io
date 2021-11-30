@@ -1,18 +1,10 @@
 body {
   background-color: #ECF9ED;
 }
-title {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 65px;
-}
-title.test {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 65px;
-}
-h1.test {
+h1.header {
   text-align: center;
 }
-table.comicGreen {
+table.search {
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 15px;
   table-layout: fixed;
@@ -22,36 +14,43 @@ table.comicGreen {
   text-align: center;
   border-collapse: collapse;
 }
-table.comicGreen td, table.comicGreen th {
+table.search td, table.search th {
   border: 3px solid #000000;
   padding: 13px 12px;
   width: 300px;
   overflow: hidden;
 }
-table.comicGreen tbody td {
+table.search tbody td {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: black;
 }
-table.comicGreen tr:nth-child(even) {
-  background: white;
-}
 .label {
   color: black;
   padding: 8px;
 }
-.success {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;} /* Grey */
-.info {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #4F7849; width: 200px; color: black; font-weight: bold;}
-.header {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; text-align: center; color: black;}
-.grey {font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; background-color: #DCDCDC; width: 200px;
+.success {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+  font-size: 16px; 
+  background-color: #DCDCDC; 
+  width: 200px;
 } /* Grey */
+.grey {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+  ont-size: 16px; 
+  background-color: #DCDCDC; 
+  width: 200px;
+}
+/* Grey background for select option */
 select option[value="blank"] {
   background: #DCDCDC;
 }
+/* Green background for select option */
 select option[value="wd:Q14907008"] {
   background: #00E600;
 }
+/* Red background for select option */
 select option[value="wd:Q14906419"] {
   background: red;
 }
