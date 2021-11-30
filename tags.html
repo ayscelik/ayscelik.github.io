@@ -1,168 +1,164 @@
 ---
 layout: page 
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Set-up for the title -->
-	<h1 class="title test">Proteins involved in cellular senescence</h1>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<!-- Initialize a global WBK function -->
-	<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
-	<!-- Initialize a global wdk object using the WBK object -->
-	<script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
-	<link rel="stylesheet" href="/assets/css/mystyle.css">
+  <!-- Set-up for the title -->
+  <h1 class="title test">Proteins involved in cellular senescence</h1>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Initialize a global WBK function -->
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
+  <!-- Initialize a global wdk object using the WBK object -->
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/mystyle.css">
 </head>
 	
 <body>
-<div>	
-	<!-- Set-up for the subtitle -->
-	<p><p>
-	<h2>Search for the proteins!</h2>
-	<p>
-	<!-- Create table -->
-	 <table class="comicGreen">
-	    <tbody>
-
-	<!-- First row of the table -->
+  <div>	
+    <!-- Set-up for the subtitle -->
+    <p><p>
+    <h2>Search for the proteins!</h2>
+    <p>
+    <!-- Create table -->
+    <table class="comicGreen">
+      <tbody>
+        <!-- First row of the table -->
 	<tr>
-	<td>Choose a location in the cell:</td>
-	<td>    
-		<select class="label success" name="locations" id="locations">
-			<option value="basic">- select -</option>
-			<option value="wd:Q40260">Nucleus</option>
-			<option value="wd:Q39572">Mitochondria</option>
-			<option value="wd:Q79899">Cytoplasm</option>
-			<option value="wd:Q220599">Cytosol</option>
-			<option value="wd:Q14349455">Membrane</option>
-			<option value="wd:Q79927">Endoplasmic reticulum</option>
-			<option value="wd:Q83181">Golgi apparatus</option>
-		</select>
-	</td>	
-	</tr>
-		    
+	  <td>Choose a location in the cell:</td>
+	  <td>    
+	    <select class="label success" name="locations" id="locations">
+	      <option value="basic">- select -</option>
+	      <option value="wd:Q40260">Nucleus</option>
+	      <option value="wd:Q39572">Mitochondria</option>
+	      <option value="wd:Q79899">Cytoplasm</option>
+	      <option value="wd:Q220599">Cytosol</option>
+	      <option value="wd:Q14349455">Membrane</option>
+	      <option value="wd:Q79927">Endoplasmic reticulum</option>
+	      <option value="wd:Q83181">Golgi apparatus</option>
+	   </select>
+	  </td>	
+	</tr>	    
 	<!-- Second row of the table, imports all the necessary images -->
 	<tr>
-	<td>Here is where your proteins can be found:</td>
-	<td>
-		<img id="basic" src="/assets/Pictures/BasicCell.jpg" alt="BasicCell" width="369" height="282">  
-		<img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell" width="369" height="282">
-		<img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell" width="369" height="282">
-		<img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell" width="369" height="282">
-		<img id="wd:Q220599" src="/assets/Pictures/CytosolLabel.jpg" alt="CytosolInCell" width="369" height="282">
-		<img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell" width="369" height="282">
-		<img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" width="369" height="282">
-		<img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
-	</td>
-	</tr>
-		    
+	  <td>Here is where your proteins can be found:</td>
+	  <td>
+	    <img id="basic" src="/assets/Pictures/BasicCell.jpg" alt="BasicCell" width="369" height="282">  
+	    <img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell" width="369" height="282">
+	    <img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell" width="369" height="282">
+	    <img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell" width="369" height="282">
+	    <img id="wd:Q220599" src="/assets/Pictures/CytosolLabel.jpg" alt="CytosolInCell" width="369" height="282">
+	    <img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell" width="369" height="282">
+	    <img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" width="369" height="282">
+	    <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
+	  </td>
+	</tr>	    
 	<!-- Third row of the table -->	    
 	<tr>
-	<td>Choose a type of regulation:</td>
-	<td>
-		<select class="label grey"name="type" id="type">
-			<option value="blank">- select -</option>
-			<option value="wd:Q14907008">Upregulated</option>
-			<option value="wd:Q14906419">Downregulated</option>
-		</select>
-	</td>
+	  <td>Choose a type of regulation:</td>
+	  <td>
+	    <select class="label grey"name="type" id="type">
+	      <option value="blank">- select -</option>
+	      <option value="wd:Q14907008">Upregulated</option>
+	      <option value="wd:Q14906419">Downregulated</option>
+	    </select>
+	  </td>
 	</tr>
-</tbody>
-</table>
+      </tbody>
+    </table>
+  <p>
+    <input id="submit" type="button" class="label success" value="List Proteins">
+  </p>	
+  </div>
 
-<p>
-<input id="submit" type="button" class="label success" value="List Proteins">
-</p>
-	
-</div>
-
-<div>
+  <div>
     <ol id="list_of_proteins">
     </ol>
-</div>
+  </div>
 	
-<script>
-	// Error codes in case the user has not entered a correct response, followed by the SPARQL query
-	$("#submit").click(async function() {
-		$("#list_of_proteins").empty();
-		const location = $('#locations').val();
-		const type = $('#type').val();
+  <script>
+    // Error codes in case the user has not entered a correct response, followed by the SPARQL query
+    $("#submit").click(async function() {
+      $("#list_of_proteins").empty();
+      const location = $('#locations').val();
+      const type = $('#type').val();
 
-		if (type == "blank" && location == "basic")
-			$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
+        if (type == "blank" && location == "basic")
+          $("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
 
-		else if (location == "basic")
-			$("#list_of_proteins").text("Error: You did not select a location.");
+        else if (location == "basic")
+          $("#list_of_proteins").text("Error: You did not select a location.");
 
-		else if (type == "blank")
-			$("#list_of_proteins").text("Error: You did not select a type of regulation.");
+        else if (type == "blank")
+          $("#list_of_proteins").text("Error: You did not select a type of regulation.");
 
-		// Wikidata query to retrieve protein information    
-		else {
-			const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
-			WHERE {
-				?proteinLink wdt:P31 wd:Q8054.
-				?proteinLink wdt:P703 wd:Q15978631.
-				 VALUES ?goBioprocess {${type}}.
-				?proteinLink wdt:P682 ?goBioprocess.
-				VALUES ?goLocation {${location}}.
-				?proteinLink wdt:P681 ?goLocation.
-				SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-			}`;
-			const url = wdk.sparqlQuery(wdquery)
-			const response = await fetch(url)
-			const results = await response.json()
-			const proteinList = wdk.simplify.sparqlResults(results)
+        // Wikidata query to retrieve protein information    
+        else {
+          const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
+            WHERE {
+              ?proteinLink wdt:P31 wd:Q8054.
+              ?proteinLink wdt:P703 wd:Q15978631.
+              VALUES ?goBioprocess {${type}}.
+              ?proteinLink wdt:P682 ?goBioprocess.
+              VALUES ?goLocation {${location}}.
+              ?proteinLink wdt:P681 ?goLocation.
+              SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+            }`;
+          const url = wdk.sparqlQuery(wdquery)
+          const response = await fetch(url)
+          const results = await response.json()
+          const proteinList = wdk.simplify.sparqlResults(results)
 
-			// Statement to return an answer if you choose a location with no proteins.
-			if (proteinList.length == 0)
-			     $("#list_of_proteins").text("There are no proteins of this type in this location.");
+          // Statement to return an answer if you choose a location with no proteins.
+          if (proteinList.length == 0)
+            $("#list_of_proteins").text("There are no proteins of this type in this location.");
 
-			// Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
-			proteinList.forEach(function(protein) {
-			    $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
-			});
-		}
-	});
+          // Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
+          proteinList.forEach(function(protein) {
+            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
+          });
+        }
+	    
+      });
 
-	// Hide all the imported images
-	document.getElementById("basic").style.display='block';	
-   	document.getElementById("wd:Q40260").style.display='none';
-   	document.getElementById("wd:Q39572").style.display='none';
-   	document.getElementById("wd:Q79899").style.display='none';
-   	document.getElementById("wd:Q220599").style.display='none';
-    	document.getElementById("wd:Q14349455").style.display='none';
-    	document.getElementById("wd:Q79927").style.display='none';
-    	document.getElementById("wd:Q83181").style.display='none';
+      // Hide all the imported images
+      document.getElementById("basic").style.display='block';	
+      document.getElementById("wd:Q40260").style.display='none';
+      document.getElementById("wd:Q39572").style.display='none';
+      document.getElementById("wd:Q79899").style.display='none';
+      document.getElementById("wd:Q220599").style.display='none';
+      document.getElementById("wd:Q14349455").style.display='none';
+      document.getElementById("wd:Q79927").style.display='none';
+      document.getElementById("wd:Q83181").style.display='none';
 
-	// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
-	$("#locations").change(function(){
-        	document.getElementById("basic").style.display='none';
-		document.getElementById("wd:Q40260").style.display='none';
-        	document.getElementById("wd:Q39572").style.display='none';
-        	document.getElementById("wd:Q79899").style.display='none';
-        	document.getElementById("wd:Q220599").style.display='none';
-        	document.getElementById("wd:Q14349455").style.display='none';
-        	document.getElementById("wd:Q79927").style.display='none';
-        	document.getElementById("wd:Q83181").style.display='none';
+      // Hide all images again, then reveal ONLY the location chosen from the drop-down menu
+      $("#locations").change(function(){
+        document.getElementById("basic").style.display='none';
+        document.getElementById("wd:Q40260").style.display='none';
+        document.getElementById("wd:Q39572").style.display='none';
+        document.getElementById("wd:Q79899").style.display='none';
+        document.getElementById("wd:Q220599").style.display='none';
+        document.getElementById("wd:Q14349455").style.display='none';
+        document.getElementById("wd:Q79927").style.display='none';
+        document.getElementById("wd:Q83181").style.display='none';
 
-		var imgId = $("#locations").val();
-		document.getElementById(imgId).style.display='block';
-	});	
+        var imgId = $("#locations").val();
+        document.getElementById(imgId).style.display='block';
+      });	
 	
-	// Color the button for downregulated option in red, and the option for upregulated in green
-	$("#type").change(function(){
-		var typeval = $("#type").val();
-		if (typeval == "blank") {
-			document.getElementById("type").style.backgroundColor='#DCDCDC';
-		} else if (typeval == "wd:Q14907008") {
-			document.getElementById("type").style.backgroundColor='#00E600';
-		} else if (typeval =="wd:Q14906419") {
-			document.getElementById("type").style.backgroundColor='red';
-		}
-	});
-</script>
+      // Color the button for downregulated option in red, and the option for upregulated in green
+      $("#type").change(function(){
+        var typeval = $("#type").val();
+        if (typeval == "blank"){
+          document.getElementById("type").style.backgroundColor='#DCDCDC';
+	} 
+	else if (typeval == "wd:Q14907008") {
+	  document.getElementById("type").style.backgroundColor='#00E600';
+	} 
+	else if (typeval =="wd:Q14906419") {
+	  document.getElementById("type").style.backgroundColor='red';
+	}
+      });
+  </script>
 </body>
 </html>
-
