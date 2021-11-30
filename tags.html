@@ -5,7 +5,7 @@ layout: page
 <html lang="en">
 <head>
   <!-- Set-up for the title -->
-  <h1 class="title test">Proteins involved in cellular senescence</h1>
+  <h1 class="header">Proteins involved in cellular senescence</h1>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- Initialize a global WBK function -->
   <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
@@ -21,13 +21,13 @@ layout: page
     <h2>Search for the proteins!</h2>
     <p>
     <!-- Create table -->
-    <table class="comicGreen">
+    <table class="search">
       <tbody>
         <!-- First row of the table -->
 	<tr>
 	  <td>Choose a location in the cell:</td>
 	  <td>    
-	    <select class="label success" name="locations" id="locations">
+	    <select class="label grey" name="locations" id="locations">
 	      <option value="basic">- select -</option>
 	      <option value="wd:Q40260">Nucleus</option>
 	      <option value="wd:Q39572">Mitochondria</option>
@@ -67,7 +67,7 @@ layout: page
       </tbody>
     </table>
   <p>
-    <input id="submit" type="button" class="label success" value="List Proteins">
+    <input id="submit" type="button" class="label grey" value="List Proteins">
   </p>	
   </div>
 
