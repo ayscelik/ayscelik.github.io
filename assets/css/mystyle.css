@@ -28,8 +28,8 @@ table.search tbody td {
   text-align: center;
   color: black;
 }
-table.search tr:nth-child(even) {
-  background: #CEE0CC;
+table.search tr:nth-child(odd) {
+  background: grey;
 }
 
 .label {
