@@ -29,7 +29,7 @@ table.search tbody td {
   color: black;
 }
 table.search tr:nth-child(odd) {
-  background: grey;
+  background: #DCDCDC;
 }
 
 .label {
