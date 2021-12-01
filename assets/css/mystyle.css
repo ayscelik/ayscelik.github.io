@@ -1,5 +1,5 @@
 body {
-  width: 70%; /* Position all elements in center  */
+  width: 70%; /* Position elements (e.g. the table) closer to the center  */
   margin: 0 auto;
   background-color: #ECF9ED;
 }
@@ -35,7 +35,7 @@ table.search tbody td {
   color: black;
 }
 table.search tr:nth-child(odd) {
-  background: #F0F0F0;
+  background: red;
 }
 
 .label {
