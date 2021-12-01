@@ -35,7 +35,10 @@ table.search tbody td {
   color: black;
 }
 table.search tr:nth-child(odd) {
-  background: red;
+  background: grey;
+}
+table.search tr:nth-child(even) {
+  background: white;
 }
 
 .label {
