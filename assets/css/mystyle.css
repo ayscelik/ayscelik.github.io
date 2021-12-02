@@ -38,7 +38,7 @@ table.search tr:nth-child(odd) {
   background: #F0F0F0;
 }
 table.search tr:nth-child(even) {
-  background: yellow;
+  background: white;
 }
 
 .label {
