@@ -108,24 +108,24 @@ layout: page
 			?proteinLink wdt:P681 ?goLocation.
 			SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
             	}`;
-        const url = wdk.sparqlQuery(wdquery)
-        const response = await fetch(url)
-        const results = await response.json()
-        const proteinList = wdk.simplify.sparqlResults(results)
+		// Manipulate the Wikidata result to turn it from a url to an eventual simplified json list that our code will use.
+		const url = wdk.sparqlQuery(wdquery)
+		const response = await fetch(url)
+		const results = await response.json()
+		const proteinList = wdk.simplify.sparqlResults(results)
 
-          // Statement to return an answer if you choose a location with no proteins.
-          if (proteinList.length == 0)
-            $("#list_of_proteins").text("There are no proteins of this type in this location.");
+		// Statement to return an answer if you choose a location with no proteins.
+		if (proteinList.length == 0)
+			$("#list_of_proteins").text("There are no proteins of this type in this location.");
 
-          // Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
-          proteinList.forEach(function(protein) {
-            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
-          });
-        }
-	    
-      });
+		// Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
+		proteinList.forEach(function(protein) {
+			$("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
+		});
+      	}
+    });
 
-      // Hide all the imported images
+      // Hide all the imported images, except the basic image (image with no labels)
       document.getElementById("basic").style.display='block';	
       document.getElementById("wd:Q40260").style.display='none';
       document.getElementById("wd:Q39572").style.display='none';
@@ -151,18 +151,17 @@ layout: page
       });	
 
 	  
-      // Color the button for downregulated option in red, and the option for upregulated in green
+      // Color the button for downregulation option in red, and the option for upregulation in green
       $("#type").change(function(){
         var typeval = $("#type").val();
-        if (typeval == "blank"){
-          document.getElementById("type").style.backgroundColor='#DCDCDC';
-	} 
-	else if (typeval == "wd:Q14907008") {
-	  document.getElementById("type").style.backgroundColor='#00E600';
-	} 
-	else if (typeval =="wd:Q14906419") {
-	  document.getElementById("type").style.backgroundColor='red';
-	}
+        if (typeval == "blank")
+        	document.getElementById("type").style.backgroundColor='#DCDCDC';
+	
+	else if (typeval == "wd:Q14907008")
+		document.getElementById("type").style.backgroundColor='#00E600';
+	
+	else if (typeval =="wd:Q14906419")
+		document.getElementById("type").style.backgroundColor='red';
       });
   </script>
      	
