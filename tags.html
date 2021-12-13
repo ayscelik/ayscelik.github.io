@@ -24,7 +24,7 @@ layout: page
     <!-- Create table -->
     <table class="search">
       <tbody>
-        <!-- First row of the table -->
+        <!-- First row of the table, creates location selection drop-down menu. -->
 	<tr>
 	  <td>Choose a location in the cell:</td>
 	  <td>    
@@ -40,7 +40,7 @@ layout: page
 	   </select>
 	  </td>	
 	</tr>	    
-	<!-- Second row of the table, imports all the necessary images -->
+	<!-- Second row of the table, imports all the necessary images. -->
 	<tr>
 	  <td>Here is where your proteins can be found:</td>
 	  <td>
@@ -54,7 +54,7 @@ layout: page
 	    <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
 	  </td>
 	</tr>	    
-	<!-- Third row of the table, adds options for choosing a type of regulation -->	    
+	<!-- Third row of the table, creates type of regulation drop down menu. -->	    
 	<tr>
 	  <td>Choose a type of regulation:</td>
 	  <td>
@@ -78,25 +78,25 @@ layout: page
   </div>
 	
   <script>
-    // Error codes in case the user has not entered a correct response, followed by the SPARQL query
+    // Error codes in case the user has not entered a correct response, followed by the SPARQL query.
     $("#submit").click(async function() {
     	$("#list_of_proteins").empty();
      	const location = $('#locations').val();
      	const type = $('#type').val();
 	    
-	// Error in case neither a location nor a type have been selected    
+	// Error in case neither a location nor a type have been selected.    
       	if (type == "blank" && location == "basic")
       		$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
 
-	// Error in case a location was not selected    
+	// Error in case a location was not selected.    
       	else if (location == "basic")
       		$("#list_of_proteins").text("Error: You did not select a location.");
 	    
-      	// Error in case a type of regulation was not selected
+      	// Error in case a type of regulation was not selected.
 	else if (type == "blank")
       		$("#list_of_proteins").text("Error: You did not select a type of regulation.");
 
-      	// Wikidata query to retrieve protein information    
+      	// Wikidata query to retrieve protein information.    
       	else {
       		const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
             	WHERE {
@@ -118,14 +118,14 @@ layout: page
 		if (proteinList.length == 0)
 			$("#list_of_proteins").text("There are no proteins of this type in this location.");
 
-		// Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page    
+		// Print a numbered list of proteins in requested location, and embed a hyperlink to each protein's Wikidata page.    
 		proteinList.forEach(function(protein) {
 			$("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
 		});
       	}
     });
 
-      // Hide all the imported images, except the basic image (image with no labels)
+      // Hide all the imported images, except the basic image (image with no labels).
       document.getElementById("basic").style.display='block';	
       document.getElementById("wd:Q40260").style.display='none';
       document.getElementById("wd:Q39572").style.display='none';
@@ -135,7 +135,7 @@ layout: page
       document.getElementById("wd:Q79927").style.display='none';
       document.getElementById("wd:Q83181").style.display='none';
 
-      // Hide all images again, then reveal ONLY the location chosen from the drop-down menu
+      // Hide all images again, then reveal ONLY the location chosen from the drop-down menu.
       $("#locations").change(function(){
       	document.getElementById("basic").style.display='none';
         document.getElementById("wd:Q40260").style.display='none';
@@ -151,7 +151,7 @@ layout: page
       });	
 
 	  
-      // Color the button for downregulation option in red, and the option for upregulation in green
+      // Color the button for downregulation option in red, and the option for upregulation in green.
       $("#type").change(function(){
         var typeval = $("#type").val();
         if (typeval == "blank")
