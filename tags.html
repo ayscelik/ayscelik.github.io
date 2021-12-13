@@ -11,6 +11,7 @@ layout: page
   <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
   <!-- Initialize a global wdk object using the WBK object -->
   <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+  <!-- Connect our custom css stylesheet for use in the html elements -->	
   <link rel="stylesheet" href="/assets/css/mystyle.css">
 </head>
 	
@@ -53,14 +54,14 @@ layout: page
 	    <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell" width="369" height="282">
 	  </td>
 	</tr>	    
-	<!-- Third row of the table -->	    
+	<!-- Third row of the table, adds options for choosing a type of regulation -->	    
 	<tr>
 	  <td>Choose a type of regulation:</td>
 	  <td>
 	    <select class="label grey"name="type" id="type">
 	      <option value="blank">- select -</option>
-	      <option value="wd:Q14907008">Upregulated</option>
-	      <option value="wd:Q14906419">Downregulated</option>
+	      <option value="wd:Q14907008">Upregulation</option>
+	      <option value="wd:Q14906419">Downregulation</option>
 	    </select>
 	  </td>
 	</tr>
@@ -79,35 +80,38 @@ layout: page
   <script>
     // Error codes in case the user has not entered a correct response, followed by the SPARQL query
     $("#submit").click(async function() {
-      $("#list_of_proteins").empty();
-      const location = $('#locations').val();
-      const type = $('#type').val();
+    	$("#list_of_proteins").empty();
+     	const location = $('#locations').val();
+     	const type = $('#type').val();
+	    
+	// Error in case neither a location nor a type have been selected    
+      	if (type == "blank" && location == "basic")
+      		$("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
 
-        if (type == "blank" && location == "basic")
-          $("#list_of_proteins").text("Error: You did not select a location or a type of regulation.");
+	// Error in case a location was not selected    
+      	else if (location == "basic")
+      		$("#list_of_proteins").text("Error: You did not select a location.");
+	    
+      	// Error in case a type of regulation was not selected
+	else if (type == "blank")
+      		$("#list_of_proteins").text("Error: You did not select a type of regulation.");
 
-        else if (location == "basic")
-          $("#list_of_proteins").text("Error: You did not select a location.");
-
-        else if (type == "blank")
-          $("#list_of_proteins").text("Error: You did not select a type of regulation.");
-
-        // Wikidata query to retrieve protein information    
-        else {
-          const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
-            WHERE {
-              ?proteinLink wdt:P31 wd:Q8054.
-              ?proteinLink wdt:P703 wd:Q15978631.
-              VALUES ?goBioprocess {${type}}.
-              ?proteinLink wdt:P682 ?goBioprocess.
-              VALUES ?goLocation {${location}}.
-              ?proteinLink wdt:P681 ?goLocation.
-              SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-            }`;
-          const url = wdk.sparqlQuery(wdquery)
-          const response = await fetch(url)
-          const results = await response.json()
-          const proteinList = wdk.simplify.sparqlResults(results)
+      	// Wikidata query to retrieve protein information    
+      	else {
+      		const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
+            	WHERE {
+			?proteinLink wdt:P31 wd:Q8054.
+			?proteinLink wdt:P703 wd:Q15978631.
+			VALUES ?goBioprocess {${type}}.
+			?proteinLink wdt:P682 ?goBioprocess.
+			VALUES ?goLocation {${location}}.
+			?proteinLink wdt:P681 ?goLocation.
+			SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+            	}`;
+        const url = wdk.sparqlQuery(wdquery)
+        const response = await fetch(url)
+        const results = await response.json()
+        const proteinList = wdk.simplify.sparqlResults(results)
 
           // Statement to return an answer if you choose a location with no proteins.
           if (proteinList.length == 0)
@@ -133,7 +137,7 @@ layout: page
 
       // Hide all images again, then reveal ONLY the location chosen from the drop-down menu
       $("#locations").change(function(){
-        document.getElementById("basic").style.display='none';
+      	document.getElementById("basic").style.display='none';
         document.getElementById("wd:Q40260").style.display='none';
         document.getElementById("wd:Q39572").style.display='none';
         document.getElementById("wd:Q79899").style.display='none';
